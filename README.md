@@ -58,3 +58,7 @@ ipbd-fast-vue
 ├─tsconfig.json         TypeScript配置
 ├─vite.config.ts        Vite配置
 ```
+
+## 注意
+
+开发前需要先配置env.development中的后端接口地址（默认为演示环境接口地址 非正式接口）
