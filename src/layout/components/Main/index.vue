@@ -4,10 +4,9 @@
 			<el-scrollbar class="layout-scrollbar">
 				<div class="layout-card" :style="layoutMainHeight">
 					<router-view v-slot="{ Component, route }">
-						<keep-alive v-if="theme.isTabsCache" :include="[...tabsStore.cachedViews]">
+						<keep-alive>
 							<component :is="Component" :key="route.fullPath" />
 						</keep-alive>
-						<component :is="Component" v-else :key="route.name" />
 					</router-view>
 				</div>
 			</el-scrollbar>
@@ -19,10 +18,8 @@
 import { RouterView } from 'vue-router'
 import { computed } from 'vue'
 import { useAppStore } from '@/store/modules/app'
-import { useTabsStore } from '@/store/modules/tabs'
 
 const appStore = useAppStore()
-const tabsStore = useTabsStore()
 const theme = computed(() => appStore.theme)
 const layoutMainHeight = computed(() => {
 	if (!theme.value.isTabsView) {

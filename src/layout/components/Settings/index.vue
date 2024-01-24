@@ -5,22 +5,6 @@
 			<el-scrollbar class="settings-container">
 				<el-space direction="vertical" alignment="flex-start">
 					<el-space>
-						<el-tooltip key="dark" effect="dark" :content="$t('settings.sidebarDark')" placement="top">
-							<div
-								class="settings-box-item item-left-dark"
-								:class="theme.sidebarStyle === 'dark' ? 'active' : ''"
-								@click="handleSidebarTheme('dark')"
-							></div>
-						</el-tooltip>
-						<el-tooltip key="light" effect="dark" :content="$t('settings.sidebarLight')" placement="top">
-							<div
-								class="settings-box-item item-left-light"
-								:class="theme.sidebarStyle === 'light' ? 'active' : ''"
-								@click="handleSidebarTheme('light')"
-							></div>
-						</el-tooltip>
-					</el-space>
-					<el-space>
 						<el-tooltip key="light" effect="dark" :content="$t('settings.navbarLight')" placement="top">
 							<div
 								class="settings-box-item item-top-light"
@@ -48,41 +32,9 @@
 					</el-space>
 				</el-space>
 
-				<el-divider content-position="left">{{ $t('settings.layout') }}</el-divider>
-
-				<!-- 布局切换 -->
-				<el-space>
-					<el-tooltip key="dark" effect="dark" placement="top" :content="$t('settings.vertical')">
-						<div
-							class="settings-box-item item-vertical"
-							:class="theme.layout === 'vertical' ? 'active' : ''"
-							@click="handleLayoutTheme('vertical')"
-						></div>
-					</el-tooltip>
-					<el-tooltip key="light" effect="dark" placement="top" :content="$t('settings.columns')">
-						<div class="settings-box-item item-columns" :class="theme.layout === 'columns' ? 'active' : ''" @click="handleLayoutTheme('columns')">
-							<div class="columns-tips-box"></div>
-							<div class="columns-sub-menu"></div>
-						</div>
-					</el-tooltip>
-					<el-tooltip key="light" effect="dark" placement="top" :content="$t('settings.transverse')">
-						<div
-							class="settings-box-item item-transverse"
-							:class="theme.layout === 'transverse' ? 'active' : ''"
-							@click="handleLayoutTheme('transverse')"
-						></div>
-					</el-tooltip>
-				</el-space>
-
 				<el-divider content-position="left">{{ $t('settings.interface') }}</el-divider>
 
 				<SwitchItem v-model="isDark" :title="$t('settings.dark')" />
-				<SwitchItem v-model="theme.uniqueOpened" :title="$t('settings.uniqueOpened')" @change="handleOtherTheme" />
-				<SwitchItem v-model="theme.isLogo" :title="$t('settings.logo')" @change="handleOtherTheme" />
-				<SwitchItem v-model="theme.isBreadcrumb" :title="$t('settings.breadcrumb')" @change="handleOtherTheme" />
-				<SwitchItem v-model="theme.isTabsView" :title="$t('settings.tabs')" @change="handleOtherTheme" />
-				<SwitchItem v-model="theme.isTabsCache" :title="$t('settings.tabsCache')" @change="handleOtherTheme" />
-				<SelectItem v-model="theme.tabsStyle" :title="$t('settings.tabsStyle')" :options="tabsStyle" @change="handleOtherTheme" />
 
 				<el-divider />
 
@@ -108,7 +60,6 @@ import { useI18n } from 'vue-i18n'
 import { CopyDocument, RefreshRight } from '@element-plus/icons-vue'
 import { useClipboard, useDark } from '@vueuse/core'
 import SwitchItem from './components/SwitchItem.vue'
-import SelectItem from './components/SelectItem.vue'
 import { ElMessage } from 'element-plus'
 import { handleThemeStyle } from '@/utils/theme'
 import cache from '@/utils/cache'

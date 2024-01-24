@@ -1,13 +1,13 @@
 <template>
+	<!-- 页面布局 -->
 	<el-container class="layout-container layout-transverse">
 		<el-header class="navbar-container" :class="headerClass">
-			<Logo v-if="theme.isLogo" />
+			<Logo />
 			<el-menu :default-active="defaultActive" background-color="transparent" :collapse-transition="false" mode="horizontal">
 				<menu-item v-for="menu in routerStore.menuRoutes" :key="menu.path" :menu="menu"></menu-item>
 			</el-menu>
 			<NavbarRight />
 		</el-header>
-		<Tabs v-if="theme.isTabsView" />
 		<Main />
 	</el-container>
 </template>
@@ -15,7 +15,6 @@
 <script setup lang="ts">
 import NavbarRight from '@/layout/components/Navbar/NavbarRight.vue'
 import Main from '@/layout/components/Main/index.vue'
-import Tabs from '@/layout/components/Tabs/index.vue'
 import Logo from '@/layout/components/Logo/index.vue'
 import MenuItem from '@/layout/components/Menu/MenuItem.vue'
 import { computed } from 'vue'
@@ -25,7 +24,6 @@ import { useAppStore } from '@/store/modules/app'
 
 const appStore = useAppStore()
 const routerStore = useRouterStore()
-const theme = computed(() => appStore.theme)
 
 const route = useRoute()
 

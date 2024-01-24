@@ -1,21 +1,13 @@
 <template>
-	<div v-if="appStore.sidebarOpened" class="sidebar-logo">
-		<img class="logo" src="./ipbd.png" />
-		<span class="logo-title"> {{ $t('app.logoText') }}</span>
-	</div>
-	<div v-else class="sidebar-logo" @click="goHome()">
+	<div class="sidebar-logo" @click="goHome()">
 		<img class="logo" src="./ipbd.png" />
 		<span>{{ $t('app.miniLogoText') }}</span>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
-import { useAppStore } from '@/store/modules/app'
+import { useRouter } from 'vue-router'
 
-const appStore = useAppStore()
-
-const route = useRoute()
 const router = useRouter()
 
 const goHome = () => {
@@ -37,11 +29,5 @@ const goHome = () => {
 	.logo {
 		height: 25px;
 	}
-	.logo-title {
-		margin-left: 10px;
-	}
-}
-.sidebar-logo-expend {
-	width: 100% !important;
 }
 </style>

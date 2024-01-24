@@ -1,18 +1,15 @@
 <template>
 	<div class="navbar-right">
-		<!-- <Lang /> -->
-		<!-- <ComponentSize /> -->
 		<Search />
 		<Fullscreen />
 		<User />
-		<!-- <ThemeSettings /> -->
+		<!-- 主题设置 -->
+		<ThemeSettings />
 	</div>
 </template>
 
 <script setup lang="ts">
-import Lang from '@/components/lang/index.vue'
 import Search from './components/Search.vue'
-import ComponentSize from './components/ComponentSize.vue'
 import Fullscreen from './components/Fullscreen.vue'
 import User from './components/User.vue'
 import ThemeSettings from './components/ThemeSettings.vue'

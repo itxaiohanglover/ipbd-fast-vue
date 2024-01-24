@@ -1,5 +1,5 @@
 {
-  "name": "maku-admin",
+  "name": "ipbd-fast-vue",
   "version": "2.6.0",
   "scripts": {
     "dev": "vite",

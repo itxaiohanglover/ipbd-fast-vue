@@ -1,5 +1,4 @@
 <template>
-	<!-- <video class="video" src=""></video> -->
 	<div class="bg-container">
 		<img src="https://xirealm.oss-cn-beijing.aliyuncs.com/xi/v2-4512c514732c060dd6b4f4269de50d01_r.jpg" alt="" class="bg" />
 		<el-button class="develop" type="info">立即开发</el-button>

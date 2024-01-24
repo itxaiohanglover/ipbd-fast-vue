@@ -7,7 +7,7 @@
 		</template>
 		<menu-item v-for="sub in menu.children" :key="sub.path" :menu="sub"></menu-item>
 	</el-sub-menu>
-	<!-- 子菜单(真正的目录内容) -->
+	<!-- 子菜单(真正可以点击跳转的目录内容) -->
 	<el-menu-item v-else :key="menu.path" :index="menu.path" @click="handleClickMenu(menu)">
 		<svg-icon v-if="showIcon" :icon="menu.meta.icon"></svg-icon>
 		<template #title>
